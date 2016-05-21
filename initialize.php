@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 $sidebar = true;
 $isAdmin=false;
 $pagetittle = "Inicjalizacja bazy danych";

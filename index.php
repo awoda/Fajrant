@@ -5,6 +5,7 @@
     include "./functions/functions.php";
     include "./functions/connect_to_mysql.php";
     include "./layout/header.php";
+
 ?>
 
 

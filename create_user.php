@@ -15,6 +15,9 @@ if(isset($_POST["imie"]) && isset($_POST["nazwisko"])&& isset($_POST["email"])) 
 
     $name = $_POST["imie"];
     $surname = $_POST["nazwisko"];
+    $name = iconv('UTF-8', 'ISO-8859-1//TRANSLIT', $name);
+    $surname = iconv('UTF-8', 'ISO-8859-1//TRANSLIT', $surname);
+
     $email = $_POST["email"];
     $contract_id = $_POST["umowa"];
 
@@ -24,22 +27,24 @@ if(isset($_POST["imie"]) && isset($_POST["nazwisko"])&& isset($_POST["email"])) 
     $vacancy_id_TEXT;
 
 
-
     $username = mb_substr($name,0,1).$surname;
     $username = strtolower($username);
+
+
     $pass = generateString();
     $salt = generateString(5);
     $admin = 0;
-    
+
     $passvisible = $pass;
     $pass = sha1($pass.$salt);
 
     $counter = 0;
     do{
         if($counter>0){
+            $username = preg_replace('/[0-9]+/', '', $username);
             $username = $username.$counter;
         }
-        //$username = iconv('UTF-8', 'ASCII//TRANSLIT', $username);
+
         $query = "SELECT * FROM users WHERE username='$username'";
         $sql = mysqli_query($conn, $query);
         $existCount = mysqli_num_rows($sql);

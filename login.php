@@ -1,16 +1,14 @@
-
 <?php
+
+session_start();
+
     $sidebar = false;
     $isAdmin = false;
     $pagetittle = "Zaloguj";
-    include "./layout/header.php";
     include "./functions/connect_to_mysql.php";
-?>
 
-<!-- Code Here -->
-<?php
-session_start();
-  if(isset($_POST["username"]) && isset($_POST["password"])){
+
+if(isset($_POST["username"]) && isset($_POST["password"])){
 
         $user = preg_replace('#[^A-Za-z0-9]#i', '', $_POST["username"]);
         $password = preg_replace('#[^A-Za-z0-9]#i', '', $_POST["password"]);
@@ -40,8 +38,9 @@ session_start();
             $_SESSION["password"] = $password;
 
             header("location: index.php");
-            exit();}
+            die();}
         else {
+            include "./layout/header.php";
             echo '<div align="center"><h3>Te informacje są nieprawidłowe</h3></div>';
             echo '<p align="center"><a href="index.php" class="btn btn-success" role="button">Spróbuj jeszcze raz</a>     <a href="?" class="btn btn-danger" role="button">Wyjdź</a></p>';
             include "./layout/sidebar.php" ;
@@ -49,7 +48,11 @@ session_start();
             exit();
         }
   }
+
+include "./layout/header.php";
 ;?>
+
+
 
 
 <h1> Zaloguj </h1>

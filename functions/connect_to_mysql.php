@@ -1,10 +1,10 @@
 <?php
 
 if(!$_ENV["VCAP_SERVICES"]){ //local dev
-    $mysql_server_name = "127.0.0.1:3306";
-    $mysql_username = "root";
-    $mysql_password = "root";
-    $mysql_database = "fajrantdb";
+    $mysql_server_name = "";
+    $mysql_username = "";
+    $mysql_password = "";
+    $mysql_database = "";
 
 } else { //running in Bluemix
 

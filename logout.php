@@ -2,7 +2,6 @@
     $sidebar = false;
     $isAdmin = false;
     $pagetittle = "Wylogowano";
-    include "./layout/header.php";
 
 session_start();
 $_SESSION = array();
@@ -13,8 +12,8 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
-
 session_destroy();
+include "./layout/header.php";
 ?>
 
         <div class="caption-full">
