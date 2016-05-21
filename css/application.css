@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    padding-top: 50px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    color:#666;
+    margin-bottom: 60px;
+}
+header{
+    background: #333;
+    color: #fff;
+    height: 80px;
+    margin-bottom: 20px;
+}
+@media (max-width:650px) {
+    header{
+        background: #333;
+        color: #fff;
+        height: 110px;
+        margin-bottom: 20px;
+    }
+}
+.footer {
+    background: #333;
+    color: #fff;
+    height: 60px;
+    margin-top: 20px;
+    text-align: center;
+    padding-top: 20px;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.calendar{
+     display:block;
+     width:80px;
+     height:80px;
+}
+.calendar-week{
+    display:block;
+    width:80px;
+}
+.table-scrollable{
+    overflow: auto;
+}
+p.table{
+    margin:0px;
+}
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.table-borderless {
+    border-bottom:0px !important;
+}
+.table-borderless th, .table-borderless td {
+    border: 0px !important;
+}
+.fixed-table-container {
+    border:0px !important;
+}
+blockquote{
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.5em;
+}
+.holiday, .sunday{
+    color: #ff0000;
+}
+.naZadanie{
+    color: blue;
+}
+.urlop{
+    color: limegreen;
+}
+.chorobowe{
+    color: orange;
+}
+.nadgodziny{
+    color: fuchsia;
+}
+.niedostepnosc{
+    color: chocolate;
+}
+.dostepnosc{
+    color: mediumblue;
+}
+.selected{
+    color: dodgerblue;
+}
